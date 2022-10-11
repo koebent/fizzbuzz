@@ -4,18 +4,25 @@ import sys
 
 def is_positive_integer(n):
     """Returns True if n is a positive integer"""
-
-
-    return False
+    if n > 0:
+        return True
+    else:
+        return False
 
 
 def process(n):
     """Returns the string representation of integer n unless:
-       - n is evenly divisible by 3 (returns 'Fizz')
-       - n is evenly divisible by 5 (returns 'Buzz')
-       - n is evenly divisible by both 3 and 5 (returns 'FizzBuzz')"""
-
-    return ''
+       - n is evenly divisible by 3 (returns 'Fizz')"""
+    if n%3 == 0 and n%5 != 0:
+        return "Fizz"
+    """- n is evenly divisible by 5 (returns 'Buzz')"""
+    if n%5 == 0 and n%3 != 0:
+        return "Buzz"
+    """- n is evenly divisible by both 3 and 5 (returns 'FizzBuzz')"""
+    if n%3 == 0 and n%5 == 0:
+        return "FizzBuzz"
+    else:
+        return str(n)
 
 
 @click.command()
